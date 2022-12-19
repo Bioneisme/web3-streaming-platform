@@ -5,7 +5,8 @@ import {EntityManager, MikroORM} from "@mikro-orm/core";
 import {CLIENT_URL, SERVER_PORT} from "./config/settings";
 import {config} from "./config/mikro-orm";
 import logger from "./config/logger";
-import logging from "./middleware/loggingMiddleware";
+import logging from "./middlewares/loggingMiddleware";
+import userRoute from "./routes/userRoute";
 
 const app: Application = express();
 
@@ -21,6 +22,7 @@ app.use(cors({
 }));
 app.use(cookieParser());
 
+app.use("/api/users", userRoute);
 app.use(logging);
 
 app.listen(SERVER_PORT, async () => {

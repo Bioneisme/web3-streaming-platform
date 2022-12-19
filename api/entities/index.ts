@@ -1,5 +1,6 @@
 import {baseEntity} from "./baseEntity";
+import {Users} from "./userEntity"
 
-export {baseEntity};
+export {baseEntity, Users};
 
-export default [baseEntity];
+export default [baseEntity, Users];

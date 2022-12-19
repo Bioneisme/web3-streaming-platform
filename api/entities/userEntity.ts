@@ -12,7 +12,7 @@ export class Users extends baseEntity {
     @Property({type: "string"})
     password!: string;
 
-    @Property({type: "string"})
+    @Property({type: "string", nullable: true})
     address?: string;
 
     constructor(login: string, password: string, email: string, address: string) {
