@@ -10,12 +10,12 @@ import {create} from "ipfs-http-client";
 const auth = 'Basic ' + Buffer.from(`${INFURA_PROJECT_ID}:${INFURA_API_KEY}`).toString('base64');
 
 const ipfs = create({
-    // host: 'ipfs.infura.io',
-    // port: 5001, protocol: 'https',
-    // headers: {
-    //     authorization: auth
-    // }
-    url: "http://127.0.0.1:5001"
+    host: 'ipfs.infura.io',
+    port: 5001, protocol: 'https',
+    headers: {
+        authorization: auth
+    }
+    // url: "http://127.0.0.1:5001"
 });
 
 const upload = multer({dest: 'uploads/'});
