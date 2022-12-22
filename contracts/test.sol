@@ -4,6 +4,7 @@ pragma solidity ^0.8.0;
 
 contract Inbox {
     mapping(string => string) public ipfsInbox;
+    int zero = 123;
     //Events
     event ipfsSent(string _ipfsHash, string _address);
     event inboxResponse(string response);
@@ -23,5 +24,9 @@ contract Inbox {
         string memory ipfs_hash = ipfsInbox[_address];
         //emit inboxResponse(ipfs_hash);
         return ipfs_hash;
+    }
+
+    function getZeroNumber() public view returns (int) {
+        return zero;
     }
 }

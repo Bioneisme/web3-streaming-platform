@@ -10,8 +10,9 @@ import userRoute from "./routes/userRoute";
 import Web3 from "web3";
 // @ts-ignore
 import contract from "truffle-contract";
-import artifacts from "../build/Inbox.json";
+import artifacts from "../build/StreamToken.json";
 import NodeMediaServer from "node-media-server";
+import tokenRoute from "./routes/tokenRoute";
 
 const app: Application = express();
 
@@ -26,7 +27,8 @@ export const DI = {} as {
     orm: MikroORM,
     em: EntityManager,
     lms: any,
-    accounts: any
+    accounts: any,
+    web3: Web3
 };
 
 app.use(express.json());
@@ -37,6 +39,7 @@ app.use(cors({
 app.use(cookieParser());
 
 app.use("/api/users", userRoute);
+app.use("/api/token", tokenRoute);
 app.use(logging);
 
 app.listen(SERVER_PORT, async () => {
@@ -44,6 +47,7 @@ app.listen(SERVER_PORT, async () => {
     DI.em = DI.orm.em.fork();
     DI.lms = await LMS.deployed();
     DI.accounts = await web3.eth.getAccounts();
+    DI.web3 = web3;
 
     logger.info(`Server Started on port ${SERVER_PORT}`);
 });

@@ -57,6 +57,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "getZeroNumber",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "string",
@@ -122,11 +135,11 @@
 	},
 	"sources": {
 		"contracts/test.sol": {
-			"keccak256": "0x8acf0b88fe521e594aee00f0268c628f2cf9d32a4e2bb90b001bbdeeca0e36f5",
+			"keccak256": "0xf0b408739ba38103e1352a1f18da5fcb13a13c4988bca0ab9c5f19e97bc3e3b0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://eee8d838be76b29dc2d474f64a7348396d1585dcf111d8d15544a176380abce8",
-				"dweb:/ipfs/QmSu3uqmK74Xh6F6rjqZegUoNdnK2UvZxZDsvNuTkx5uw2"
+				"bzz-raw://fedd88411408af508da74d21b276f3c4c98edc177d0b752fdc2bbb0d1a5ece16",
+				"dweb:/ipfs/QmdvRwBpM7GyQLS2YrYpGKFVjWbneUHUEgVtD82bci83BL"
 			]
 		}
 	},
