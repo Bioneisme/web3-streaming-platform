@@ -12,4 +12,9 @@ contract StreamToken is ERC20{
     function getContractAddress() public view returns (address) {
         return address(this);
     }
+
+    function getSender() public view returns (address) {
+
+        return msg.sender;
+    }
 }

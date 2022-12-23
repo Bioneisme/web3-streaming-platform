@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.7+commit.e28d00a7"
+		"version": "0.8.17+commit.8df45f5f"
 	},
 	"language": "Solidity",
 	"output": {
@@ -167,6 +167,19 @@
 			{
 				"inputs": [],
 				"name": "getContractAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getSender",
 				"outputs": [
 					{
 						"internalType": "address",
@@ -388,11 +401,11 @@
 			]
 		},
 		"contracts/token.sol": {
-			"keccak256": "0x8ccac988bfc6b9f5e31f1d943e3a1e467c74e965beb6b692ebd06b034bd3cc7f",
+			"keccak256": "0xeafca1f0a79de5f3d331f82d7d5da8d90bc3eb3350beb21e9d0fbfdc27498e14",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://af452f4af89ed9cf067920a841ceca186bb1954cd9a150722ede8f7ad6ec8024",
-				"dweb:/ipfs/QmbFA1GBPrUKHv1VhdVjTgJ88NNvpqAX8hh1AktBkMtemm"
+				"bzz-raw://ab48c453ee137f8ef681345d74971a916efddcfa8a5b8432b4b069fbee6bb15a",
+				"dweb:/ipfs/QmXBeJ43HYhiDqepK2pd1QzNzymXsrVaq9LMraAYCjBj8h"
 			]
 		}
 	},
