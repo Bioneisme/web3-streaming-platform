@@ -1,5 +1,7 @@
-import router from "./tokenRoute";
+import {Router} from "express";
 import soulBoundController from "../controllers/soulboundController";
+
+const router: Router = Router();
 
 router.get("/uploadSoulBound", soulBoundController.uploadSoulBound);
 

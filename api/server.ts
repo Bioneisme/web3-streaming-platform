@@ -1,14 +1,12 @@
 import {CLIENT_URL, MNEMONIC, RPC, SERVER_PORT, STREAM_CONFIG} from "./config/settings";
 import {config} from "./config/mikro-orm";
 import logger from "./config/logger";
-import userRoute from "./routes/userRoute";
 import tokenRoute from "./routes/tokenRoute";
 import soulBoundRoute from "./routes/soulboundRoute";
 import cors from "cors";
 import logging from "./middlewares/loggingMiddleware";
 import express, {Application} from "express";
 import cookieParser from "cookie-parser";
-import {EntityManager, MikroORM} from "@mikro-orm/core";
 import Web3 from "web3";
 import SoulBoundToken from "../build/SoulBoundStreamToken.json";
 import StreamToken from "../build/StreamToken.json";
@@ -30,8 +28,6 @@ ST.setProvider(web3.currentProvider);
 // nms.run();
 
 export const DI = {} as {
-    orm: MikroORM,
-    em: EntityManager,
     st: any,
     sbt: any,
     account: any,
@@ -45,15 +41,12 @@ app.use(cors({
 }));
 app.use(cookieParser());
 
-app.use("/api/users", userRoute);
 app.use("/api/token", tokenRoute);
 app.use("/api/nft", soulBoundRoute);
 
 app.use(logging);
 
 app.listen(SERVER_PORT, async () => {
-    DI.orm = await MikroORM.init(config);
-    DI.em = DI.orm.em.fork();
     DI.sbt = await SBT.deployed();
     DI.st = await ST.deployed();
     DI.account = await web3.eth.accounts.create();
