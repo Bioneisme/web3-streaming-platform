@@ -26,7 +26,6 @@ class SoulBoundController {
             }
 
             const added = await IPFS.add(JSON.stringify(obj));
-            console.log(added);
             res.send(added);
             return next();
         } catch (e: any) {
