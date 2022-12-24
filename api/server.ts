@@ -1,4 +1,4 @@
-import {CLIENT_URL, MNEMONIC, RPC, SERVER_PORT, STREAM_CONFIG} from "./config/settings";
+import {CLIENT_URL, CLIENT_URL2, MNEMONIC, RPC, SERVER_PORT, STREAM_CONFIG} from "./config/settings";
 import logger from "./config/logger";
 import tokenRoute from "./routes/tokenRoute";
 import soulBoundRoute from "./routes/soulboundRoute";
@@ -33,7 +33,8 @@ export const DI = {} as {
 
 app.use(express.json());
 app.use(cors({
-    credentials: true
+    credentials: true,
+    origin: [CLIENT_URL, CLIENT_URL2]
 }));
 app.use(cookieParser());
 
