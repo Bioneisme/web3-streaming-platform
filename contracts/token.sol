@@ -1,5 +1,4 @@
 // SPDX-License-Identifier: MIT
-
 pragma solidity ^0.8.0;
 
 import "../.deps/npm/@openzeppelin/contracts/token/ERC20/ERC20.sol";
@@ -14,7 +13,6 @@ contract StreamToken is ERC20{
     }
 
     function getSender() public view returns (address) {
-
         return msg.sender;
     }
 }
