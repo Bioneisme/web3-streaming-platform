@@ -21,7 +21,7 @@ class TokenController {
         try {
             const {address, amount} = req.body;
 
-            const result = await DI.st.transfer(address, amount, {from: MAIN_ADDRESS});
+            const result = await DI.st.transfer(address, amount * 0.0000000000000001, {from: MAIN_ADDRESS});
             res.send(result)
             return next();
         } catch (e: any) {
@@ -37,6 +37,18 @@ class TokenController {
             return next();
         } catch (e: any) {
             logger.error(`getContractAddress: ${e}`);
+            res.status(400).json({status: 'error', message: e.message});
+        }
+    }
+
+    async claim(req: Request, res: Response, next: NextFunction) {
+        try {
+            const {address, amount} = req.body;
+            const result = await DI.st.transfer(address, amount, {from: MAIN_ADDRESS});
+            res.send(result);
+            return next();
+        } catch (e: any) {
+            logger.error(`claim: ${e}`);
             res.status(400).json({status: 'error', message: e.message});
         }
     }
