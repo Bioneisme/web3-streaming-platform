@@ -14,6 +14,7 @@
 ### Prerequisites
 * NodeJS, NPM (https://www.npmjs.com/get-npm)
 * Infura-IPFS (https://www.infura.io/)
+* BSC-SCAN (https://bscscan.com/)
 * Truffle
 
 ### Installing
