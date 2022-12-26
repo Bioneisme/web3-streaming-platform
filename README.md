@@ -13,9 +13,8 @@
 ## Getting Started
 ### Prerequisites
 * NodeJS, NPM (https://www.npmjs.com/get-npm)
+* Infura-IPFS (https://www.infura.io/)
 * Truffle
-* LivePeer API
-* IPFS API
 
 ### Installing
 ```bash
