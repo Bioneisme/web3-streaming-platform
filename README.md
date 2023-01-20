@@ -1,4 +1,4 @@
-# BNB Live streaming platform (BackEnd + Blockchain)
+# DeWatch.live streaming platform (BackEnd + Blockchain)
 
 - [Navigation](#navigation)
     - [Features](#features)
